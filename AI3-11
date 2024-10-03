@@ -1,0 +1,7 @@
+import matplotlib.image as mpimg //matplotlib라이브러리의 image를 mpimg라는 이름으로 가져옴(이미지 파일 읽음)
+import matplotlib.pyplot as plt //라이브러리의 pyplot를 plt라는 이름으로 가져옴(그래프나 이미지를 그릴 수 있음)
+
+img = mpimg.imread('./drive/MyDrive/myData.png') //imread는 지정된 경로의 파일을 가져와 img에 저장
+plt.imshow(img)//imshow는 img에 저장된 파일을 화면에 출력
+
+//matplotlib라이브러리를 사용.
