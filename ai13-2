@@ -1,0 +1,41 @@
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+
+# 이미지 파일 경로
+image_path ='./drive/MyDrive/lenna.png'
+
+# 이미지 읽기
+image = mpimg.imread(image_path)
+
+# x 값 생성
+x = np.linspace(0, 10, 100)
+
+# y 값 생성: sine과 cosine
+y_sin = np.sin(0.5 * np.pi * x)
+y_cos = np.cos(0.5 * np.pi * x)
+
+# 서브플롯 생성 (1행 2열)
+fig, ax = plt.subplots(1, 2, figsize=(12, 6))
+
+# 첫 번째 서브플롯: 이미지 출력
+ax[0].imshow(image)
+ax[0].axis('off')  # 축 숨기기
+ax[0].set_title('Image')
+print('1 : type(image) = ', type(image))
+print('2 : image.shape = ', image.shape)
+
+# 두 번째 서브플롯: 그래프 출력
+ax[1].plot(x, y_sin, 'ro-', label='sine')  # 빨간색 원 모양의 sine 그래프
+ax[1].plot(x, y_cos, 'b^--', label='cosine')  # 파란색 삼각형 모양의 cosine 그래프
+ax[1].set_title('Graph, sin(0.5πx) and cos(0.5πx)')
+ax[1].set_xlabel('x')
+ax[1].set_ylabel('y')
+ax[1].legend()
+ax[1].grid(True)
+
+# 서브플롯 간의 간격 조정
+plt.tight_layout()
+
+# 그래프 출력
+plt.show()
