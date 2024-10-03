@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+
+image = plt.imread('./drive/MyDrive/lenna.png')
+plt.imshow(image)
+plt.axis('off') //주변 눈금 표시 제
+print('1 : type(image) = ', type(image)) //데이터타입 출력
+print('2 : image.shape = ', image.shape) //이미지 크기와 채널 번호 출력
